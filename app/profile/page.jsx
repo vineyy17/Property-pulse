@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Spinner from '@/components/Spinner';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 const ProfilePage = () => {
   const { data: session } = useSession();
@@ -59,15 +60,13 @@ const ProfilePage = () => {
         );
 
         setProperties(updatedProperties);
-
-        alert('Property Deleted');
+        toast.success('Property deleted');
       } else {
-        alert('Failed to delete property');
+        toast.error('Failed to delete property');
       }
     } catch (error) {
       console.log(error);
-
-      alert('Failed to delete property');
+      toast.error('Failed to delete property');
     }
   };
 
