@@ -4,6 +4,13 @@ import Footer from '@/components/Footer';
 import AuthProvider from '@/components/AuthProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  weight: ['300'],
+});
 
 export const metadata = {
   title: 'PropertyPulse | Find The Perfect Rental',
@@ -14,7 +21,7 @@ export const metadata = {
 const MainLayout = ({ children }) => {
   return (
     <AuthProvider>
-      <html lang="en">
+      <html lang="en" className={`${poppins.variable} font-sans`}>
         <body>
           <Navbar />
           <main>{children}</main>
