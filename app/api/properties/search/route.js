@@ -25,7 +25,7 @@ export const GET = async (request) => {
     };
 
     // Only check for property if it is not 'All'
-    if (propertyType && propertyType !== 'all') {
+    if (propertyType && propertyType !== 'All') {
       const typePattern = new RegExp(propertyType, 'i');
       query.type = typePattern;
     }
