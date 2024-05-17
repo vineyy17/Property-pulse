@@ -31,13 +31,11 @@ const PropertyImages = ({ images }) => {
               {images.map((image, index) => (
                 <div
                   key={index}
-                  className={`
-                  ${
-                    images.length === 3 && index === 2
+                  className={`${
+                    images.length % 2 !== 0 && index === images.length - 1
                       ? 'col-span-2'
                       : 'col-span-1'
-                  }
-                `}
+                  }`}
                 >
                   <Item
                     original={image}
