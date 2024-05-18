@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import Properties from '@/components/Properties';
 import PropertySearchForm from '@/components/PropertySearchForm';
 import { fetchProperties } from '@/utils/requests';
