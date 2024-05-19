@@ -23,18 +23,16 @@ const PropertyCard = ({ property, isFeatured = false }) => {
 
   return (
     <div
-      // className={`rounded-xl shadow-md relative ${
-      //   isFeatured ? 'bg-white flex flex-col md:flex-row' : ''
-      // }`}
-
-      className="rounded-xl shadow-md relative"
+      className={`rounded-xl shadow-md relative ${
+        isFeatured ? 'bg-white flex flex-col md:flex-row' : ''
+      }`}
     >
       <Image
         src={property.images[0]}
         alt=""
-        className={`w-full h-auto rounded-t-xl ${
+        className={`w-full rounded-t-xl h-56 object-cover ${
           isFeatured
-            ? 'md:w-2/5 md:rounded-tr-none md:rounded-l-xl object-cover'
+            ? 'md:w-2/5 md:rounded-tr-none md:rounded-l-xl object-cover md:h-auto'
             : ''
         }`}
         sizes="100vw"
