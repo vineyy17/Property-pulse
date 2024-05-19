@@ -30,9 +30,12 @@ const PropertyCard = ({ property, isFeatured = false }) => {
       <Image
         src={property.images[0]}
         alt=""
-        className={`w-full h-auto rounded-t-xl ${
-          isFeatured ? 'md:w-2/5 md:rounded-tr-none md:rounded-l-xl' : ''
-        }`}
+        // className={`w-full h-auto rounded-t-xl ${
+        //   isFeatured
+        //     ? 'md:w-2/5 md:rounded-tr-none md:rounded-l-xl object-cover'
+        //     : ''
+        // }`}
+        className="w-full h-auto rounded-t-xl"
         sizes="100vw"
         height={0}
         width={0}
