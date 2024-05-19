@@ -8,7 +8,7 @@ import {
   FaMapMarker,
 } from 'react-icons/fa';
 
-const PropertyCard = ({ property }) => {
+const PropertyCard = ({ property, isFeatured = false }) => {
   const getRateDisplay = () => {
     const { rates } = property;
 
@@ -22,21 +22,35 @@ const PropertyCard = ({ property }) => {
   };
 
   return (
-    <div className="rounded-xl shadow-md relative">
+    <div
+      className={`rounded-xl shadow-md relative ${
+        isFeatured ? 'bg-white flex flex-col md:flex-row' : ''
+      }`}
+    >
       <Image
         src={property.images[0]}
         alt=""
-        className="w-full h-auto rounded-t-xl"
+        className={`w-full h-auto rounded-t-xl ${
+          isFeatured
+            ? 'md:w-2/5 md:rounded-tr-none md:rounded-l-xl object-cover'
+            : ''
+        }`}
         sizes="100vw"
         height={0}
         width={0}
       />
-      <div className="p-4">
+      <div className={`${!isFeatured ? 'p-4' : 'p-6'}`}>
         <div className="text-left md:text-center lg:text-left mb-6">
           <div className="text-gray-600">{property.type}</div>
           <h3 className="text-xl font-bold">{property.name}</h3>
         </div>
-        <h3 className="absolute top-[10px] right-[10px] bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right">
+        <h3
+          className={`${
+            !isFeatured ? 'absolute top-[10px] right-[10px]' : ''
+          } bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right ${
+            isFeatured ? 'absolute top-[10px] left-[10px]' : ''
+          }`}
+        >
           ${getRateDisplay()}
         </h3>
 

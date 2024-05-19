@@ -1,7 +1,8 @@
 // export const dynamic = 'force-dynamic';
 
 import { fetchProperties } from '@/utils/requests';
-import FeaturedPropertyCard from './FeaturedPropertyCard';
+// import FeaturedPropertyCard from './FeaturedPropertyCard';
+import PropertyCard from './PropertyCard';
 
 const FeaturedProperties = async () => {
   const properties = await fetchProperties({
@@ -16,8 +17,12 @@ const FeaturedProperties = async () => {
             Featured Properties
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {properties.map((property) => (
-              <FeaturedPropertyCard key={property._id} property={property} />
+            {properties.slice(0, 2).map((property) => (
+              <PropertyCard
+                key={property._id}
+                property={property}
+                isFeatured={true}
+              />
             ))}
           </div>
         </div>

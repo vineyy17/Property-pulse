@@ -8,13 +8,15 @@ const override = {
 
 const LoadingPage = ({ loading }) => {
   return (
-    <ClipLoader
-      color="#3b82f6"
-      loading={loading}
-      cssOverride={override}
-      size={150}
-      aria-label="loading spinner"
-    />
+    <div className="h-screen">
+      <ClipLoader
+        color="#3b82f6"
+        loading={loading}
+        cssOverride={override}
+        size={150}
+        aria-label="loading spinner"
+      />
+    </div>
   );
 };
 
